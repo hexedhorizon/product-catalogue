@@ -9,7 +9,8 @@ fetch('data/data.json')
       data.forEach(product => {
         const listItem = document.createElement('p');
         listItem.textContent = `
-            ${product.product_name} - ${product.product_price}
+            ${product.product_name} - ${product.product_price} | ${product.product_description}
+            
         `; // Concatenate name and program
         productListContainer.appendChild(listItem);
       }); 
