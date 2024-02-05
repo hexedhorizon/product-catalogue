@@ -3,18 +3,21 @@
       "product_id": 1,
       "product_name": "Turon",
       "product_description": "Sweet Banana Wrap",
-      "product_price": "10.00"
+      "product_price": "10.00",
+      "product_date_added": "February 5, 2024"
     },
     {
       "product_id": 2,
       "product_name": "Siomeow",
       "product_description": "Siomai",
-      "product_price": "25.00"
+      "product_price": "25.00",
+      "product_date_added": "February 5, 2024"
     },
     {
       "product_id": 3,
       "product_name": "Benignit",
       "product_description": "Init na halohalo",
-      "product_price": "15.00"
+      "product_price": "15.00",
+      "product_date_added": "February 5, 2024"
     }
   ]
