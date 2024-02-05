@@ -9,11 +9,11 @@ fetch('data/data.json')
       data.forEach(product => {
         const listItem = document.createElement('p');
         listItem.textContent = `
-            ${product.product_name} - ${product.product_price} | ${product.product_description}
-            
+            ${product.product_name} - ${product.product_price} | ${product.product_description} | added on ${product.product_date_added}
         `; // Concatenate name and program
         productListContainer.appendChild(listItem);
       }); 
+
     })
 .catch(error => {
 console.error('Error fetching data:', error);
