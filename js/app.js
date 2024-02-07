@@ -11,7 +11,7 @@ fetch('data/data.json')
         listItem.innerHTML = `
 
             <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
+            <img src="${product.product_thumbnail}" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">${product.product_name} - ${product.product_price} Php</h5>
               <p class="card-text">${product.product_description}</p>
