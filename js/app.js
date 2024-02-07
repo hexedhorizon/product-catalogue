@@ -8,9 +8,12 @@ fetch('data/data.json')
       // Loop through the data and create list items
       data.forEach(product => {
         const listItem = document.createElement('p');
-        listItem.textContent = `
-            ${product.product_name} - ${product.product_price} | ${product.product_description} | added on ${product.product_date_added}
-        `; // Concatenate name and program
+        listItem.innerHTML = `
+          <div>${product.product_name}</div>
+          <div>${product.product_price}</div>
+          <div>${product.product_description}</div>
+          <div>Added on: ${product.product_date_added}</div>
+        `;
         productListContainer.appendChild(listItem);
       }); 
 
