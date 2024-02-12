@@ -12,16 +12,21 @@ fetch('data/data.json')
       data.forEach(product => {
           const listItem = document.createElement('div');
           listItem.innerHTML = `
-          
-              <div class="card" style="width: 18rem;">
-                  <img src="${product.product_thumbnail}" class="img-fluid img-thumbnail" alt="...">
-                  <div class="card-body">
-                      <h5 class="card-title">${product.product_name} - ${product.product_price} Php</h5>
-                      <p class="card-text">${product.product_description}</p>
-                      <p class="card-text">${product.product_date_added}</p>
-                      <a href="#" class="btn btn-primary">Add to Cart</a>
-                  </div>
-              </div>
+
+              <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="${product.product_thumbnail}" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.product_name} - ${product.product_price} Php</h5>
+                        <p class="card-text">${product.product_description}</p>
+                        <p class="card-text"><small class="text-body-secondary">${product.product_date_added}</small></p>
+                    </div>
+                    </div>
+                </div>
+                </div>
           `;
           listItem.style.marginRight = '30px';
           container.appendChild(listItem);
