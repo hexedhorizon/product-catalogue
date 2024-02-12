@@ -12,16 +12,34 @@ fetch('data/data.json')
       data.forEach(product => {
           const listItem = document.createElement('div');
           listItem.innerHTML = `
-          
-              <div class="card" style="width: 18rem;">
-                  <img src="${product.product_thumbnail}" class="img-fluid img-thumbnail" alt="...">
-                  <div class="card-body">
-                      <h5 class="card-title">${product.product_name} - ${product.product_price} Php</h5>
-                      <p class="card-text">${product.product_description}</p>
-                      <p class="card-text">${product.product_date_added}</p>
-                      <a href="#" class="btn btn-primary">Add to Cart</a>
-                  </div>
-              </div>
+        
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row">
+                    <!-- Image -->
+                    <div class="col-md-3">
+                        <img src="${product.product_thumbnail}" class="img-fluid h-100 " alt="...">
+                    </div>
+
+                    <!-- Description -->
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <h6 class="card-title">${product.product_name}</h6>
+                            <p class="card-text">${product.product_price} Php -${product.product_description}</p>
+                            <p class="card-text"><small class="text-body-secondary">${product.product_date_added}</small></p>
+                        </div>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="col">
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary btn-sm col-12">Add to Cart</button>
+                            <div style="height:.1em;"></div>
+                            <button type="button" class="btn btn-primary btn-sm col-12">Details</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
           `;
           listItem.style.marginRight = '30px';
           container.appendChild(listItem);
