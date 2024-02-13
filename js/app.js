@@ -1,17 +1,17 @@
 fetch('data/data.json')
     .then(response => response.json())
     .then(data => {
-    //List
-      // Handle the data and create a list
-      const productListContainer = document.getElementById('productList');
+        //List
+        // Handle the data and create a list
+        const productListContainer = document.getElementById('productList');
 
-      // Loop through the data and create list items
-      const container = document.createElement('div');
-      container.classList.add('card-container');
+        // Loop through the data and create list items
+        const container = document.createElement('div');
+        container.classList.add('card-container');
 
-      data.forEach(product => {
-          const listItem = document.createElement('div');
-          listItem.innerHTML = `
+        data.forEach(product => {
+            const listItem = document.createElement('div');
+            listItem.innerHTML = `
         
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row">
@@ -32,7 +32,7 @@ fetch('data/data.json')
                     <!-- Buttons -->
                     <div class="col">
                         <div class="card-body">
-                            <button type="button" class="btn btn-primary btn-sm col-12">Add to Cart</button>
+                            <button type="button" class="btn btn-primary btn-sm col-12" onclick="addToCart(${product.product_id})">Add to Cart</button>
                             <div style="height:.1em;"></div>
                             <button type="button" class="btn btn-primary btn-sm col-12">Details</button>
                         </div>
@@ -41,12 +41,22 @@ fetch('data/data.json')
                 </div>
             </div>
           `;
-          listItem.style.marginRight = '30px';
-          container.appendChild(listItem);
-});
+            listItem.style.marginRight = '30px';
+            container.appendChild(listItem);
+        });
 
-productListContainer.appendChild(container);
+        productListContainer.appendChild(container);
     })
-.catch(error => {
-console.error('Error fetching data:', error);
-});
+    .catch(error => {
+        console.error('Error fetching data:', error);
+    });
+
+let clickCounter = {}; // Object to store click counts for each product
+
+function addToCart(productId) {
+    // Increment click count for the corresponding product
+    clickCounter[productId] = (clickCounter[productId] || 0) + 1;
+
+    // Display the click count (you can update this part based on your UI requirements)
+    alert(`Product ${productId} added to cart. Click count: ${clickCounter[productId]}`);
+}
