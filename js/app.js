@@ -13,7 +13,7 @@ fetch('data/data.json')
             const listItem = document.createElement('div');
             listItem.innerHTML = `
         
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3" style="max-width: 50%vw;">
                 <div class="row">
                     <!-- Image -->
                     <div class="col-md-3">
