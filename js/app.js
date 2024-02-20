@@ -1,7 +1,7 @@
 fetch('data/data.json')
     .then(response => response.json())
     .then(data => {
-        //List
+
         // Handle the data and create a list
         const productListContainer = document.getElementById('productList');
 
@@ -51,6 +51,7 @@ fetch('data/data.json')
         console.error('Error fetching data:', error);
     });
 
+//Click counter function
 let clickCounter = {}; // Object to store click counts for each product
 
 function addToCart(productId) {
